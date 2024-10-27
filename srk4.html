@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Әуе Билеттерін Брондау</title>
+    <style>
+        /* Базалық стильдер */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Times New Roman', Times, serif, sans-serif;
+        }
+        body {
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/VQ-BEI_%286919052100%29.jpg/1200px-VQ-BEI_%286919052100%29.jpg'); /* Мұнда фон суретінің URL сілтемесін ауыстырыңыз */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #000000;
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(112, 98, 98, 0.5); /* Қара фильтр */
+            z-index: 1;
+        }
+        .container {
+            position: relative;
+            z-index: 2;
+            background: rgba(231, 228, 228, 0.85); /* Жартылай мөлдір фон */
+            width: 90%;
+            max-width: 500px;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+            color: #476199;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-top: 15px;
+            color: #333;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 1em;
+        }
+        button {
+            width: 100%;
+            background: #3b5998;
+            color: white;
+            padding: 12px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #2e4887;
+        }
+    </style>
+</head>
+<body>
+
+<div class="overlay"></div> <!-- Қара фильтр қабаты -->
+<div class="container">
+    <h1>Әуе Билеттерін Брондау</h1>
+    <form id="bookingForm">
+        <label for="from">Аты-жөні</label>
+        <input type="text" id="from" name="from" placeholder="Мысалы: Сисембаев Серік" required>
+
+        <label for="from">Телефон нөмері</label>
+        <input type="INT" id="from" name="from" placeholder="Мысалы: 87768883007" required>
+
+        <label for="from">Ұшу қаласы</label>
+        <input type="text" id="from" name="from" placeholder="Мысалы: Кызылорда" required>
+
+        <label for="to">Баратын қала</label>
+        <input type="text" id="to" name="to" placeholder="Мысалы: Астана" required>
+
+        <label for="date">Ұшу күні</label>
+        <input type="date" id="date" name="date" required>
+
+        <label for="passengers">Жолаушылар саны</label>
+        <input type="number" id="passengers" name="passengers" min="1" placeholder="1" required>
+
+        <label for="class">Сынып таңдаңыз</label>
+        <select id="class" name="class" required>
+            <option value="economy">Эконом</option>
+            <option value="first">Комфорт</option>
+            <option value="business">Бизнес</option>
+        </select>
+
+        <button type="submit">Брондау</button>
+        <footer>
+            <p>&copy; zhras</p>
+        </footer>
+    </form>
+</div>
+
+
+
+<script>
+    // Форма жіберілген кезде ескерту шығару
+    document.getElementById("bookingForm").addEventListener("submit", function(event){
+        event.preventDefault();
+        alert("Сіздің билеттеріңіз сәтті брондалды!");
+    });
+</script>
+
+
+</body>
+</html>
